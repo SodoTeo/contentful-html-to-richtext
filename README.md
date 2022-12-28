@@ -1,6 +1,6 @@
 # contentful-html-to-richtext
 
-This is a JavaScript module that supports TypeScript types and converts HTML to the contentful rich-text model. 
+Module that converts HTML to the [contentful](https://www.contentful.com/) rich-text model. 
 It was developed to assist in the process of migrating rich text content into contentful, a popular content management system. 
 The functionality has been thoroughly tested to ensure that it performs reliably. It is a useful tool for anyone who
 needs to convert HTML to contentful's rich-text format, whether for the purpose of migrating existing content or integrating with contentful's platform.
@@ -85,6 +85,39 @@ const result = htmlToRichText(html);
     }
   ],
   "nodeType": "unordered-list"
+}
+```
+
+## Note
+
+To use hyperlinks as entry blocks, as well as embedded and inline entries and assets, you will need to render your custom node constructor and (most likely) Contentful's rich-[text-html-renderer](https://www.npmjs.com/package/@contentful/rich-text-html-renderer), [rich-text-types](https://www.npmjs.com/package/@contentful/rich-text-types). 
+Below is a snippet on how to do this:
+
+```
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+import { BLOCKS, INLINES } from '@contentful/rich-text-types';
+
+if (field.type === 'RichText') {
+    const options = {
+        renderNode: {
+            [BLOCKS.EMBEDDED_ENTRY]: (node:any) =>
+                `<embedded-entry id="${node.data.target.sys.id}"/>`,
+            [BLOCKS.EMBEDDED_ASSET]: (node:any) =>
+                `<embedded-asset id="${node.data.target.sys.id}"/>`,
+            [INLINES.EMBEDDED_ENTRY]: (node:any) =>
+                `<inline-entry id="${node.data.target.sys.id}"/>`,
+            [INLINES.ENTRY_HYPERLINK]: (node:any) =>
+                `<entry-hyperlink id="${node.data.target.sys.id}">${node.content[0].value}</entry-hyperlink>`
+        }
+    };
+
+    if (field.values['en-US']) {
+        field.values['en-US'] = formatHTML(
+            documentToHtmlString(field.values['en-US'], options)
+        );
+    }
+
+    return field;
 }
 ```
 
