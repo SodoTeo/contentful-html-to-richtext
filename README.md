@@ -1,4 +1,8 @@
 # contentful-html-to-richtext
+![npm type definitions](https://img.shields.io/npm/types/html-to-richtext-contentful)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/SodoTeo/contentful-html-to-richtext?color=success)
+![GitHub](https://img.shields.io/github/license/SodoTeo/contentful-html-to-richtext)
+
 
 Module that converts HTML to the [contentful](https://www.contentful.com/) rich-text model. 
 It was developed to assist in the process of migrating rich text content into contentful, a popular content management system. 
