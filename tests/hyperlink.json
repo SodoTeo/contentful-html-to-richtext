@@ -1,0 +1,26 @@
+{
+  "data": {},
+  "content": [
+    {
+      "data": {},
+      "content": [
+        {
+          "data": {
+            "uri": "http://www.sodoteo.com"
+          },
+          "content": [
+            {
+              "data": {},
+              "marks": [],
+              "value": "heya",
+              "nodeType": "text"
+            }
+          ],
+          "nodeType": "hyperlink"
+        }
+      ],
+      "nodeType": "paragraph"
+    }
+  ],
+  "nodeType": "document"
+}

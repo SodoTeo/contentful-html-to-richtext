@@ -1,0 +1,64 @@
+{
+  "data": {},
+  "content": [
+    {
+      "data": {
+        "target": {
+          "sys": {
+            "space": {
+              "sys": {
+                "type": "Link",
+                "linkType": "Space",
+                "id": "id1234a"
+              }
+            },
+            "id": "abcde123",
+            "type": "Asset",
+            "createdAt": "2021-10-24T13:35:00.230Z",
+            "updatedAt": "2021-10-24T19:40:29.621Z",
+            "environment": {
+              "sys": {
+                "id": "master",
+                "type": "Link",
+                "linkType": "Environment"
+              }
+            },
+            "revision": 3,
+            "locale": "en-US"
+          },
+          "fields": {
+            "title": "test",
+            "description": "sample screenshot description",
+            "file": {
+              "url": "//images.ctfassets.net/id1234a/abcde123/random/test.png",
+              "details": {
+                "size": 46234,
+                "image": {
+                  "width": 400,
+                  "height": 4002
+                }
+              },
+              "fileName": "test.png",
+              "contentType": "image/png"
+            }
+          }
+        }
+      },
+      "content": [],
+      "nodeType": "embedded-asset-block"
+    },
+    {
+      "data": {},
+      "content": [
+        {
+          "data": {},
+          "marks": [],
+          "value": "",
+          "nodeType": "text"
+        }
+      ],
+      "nodeType": "paragraph"
+    }
+  ],
+  "nodeType": "document"
+}

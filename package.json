@@ -1,0 +1,54 @@
+{
+  "name": "contentful-html-to-richtext",
+  "version": "1.0.0",
+  "description": "Transform HTML into contentful's rich-text format",
+  "homepage": "TODO",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": ["lib/**/*"],
+  "scripts": {
+    "test": "node tests/index.test.js",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "TODO"
+  },
+  "keywords": [
+    "html",
+    "richtext",
+    "contentful",
+    "transform",
+    "transformation",
+    "htmlparser",
+    "renderer",
+    "converter",
+    "conversion"
+  ],
+  "author": "Teodor-Mihail Sodolescu",
+  "license": "ISC",
+  "dependencies": {
+    "html-entities": "^2.3.3",
+    "htmlparser2": "^8.0.1",
+    "ramda": "^0.28.0"
+  },
+  "devDependencies": {
+    "@contentful/rich-text-html-renderer": "^16.0.2",
+    "@types/node": "^18.11.18",
+    "@types/ramda": "^0.28.20",
+    "contentful": "^9.2.14",
+    "contentful-migration": "^4.12.6",
+    "isomorphic-fetch": "^3.0.0",
+    "prettier": "^2.8.1",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^4.9.4"
+  }
+}
