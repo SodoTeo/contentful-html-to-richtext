@@ -28,14 +28,14 @@ needs to convert HTML to contentful's rich-text format, whether for the purpose 
 
 ## Installation
 
-Using npm:
+Using [npm](https://www.npmjs.com/package/html-to-richtext-contentful):
 
-`npm install contentful-html-to-richtext`
+`npm i html-to-richtext-contentful`
 
 ## Usage
 
 ```
-const { htmlToRichText } = require('contentful-html-to-richtext');
+const { htmlToRichText } = require('html-to-richtext-contentfult');
 
 const html = '<ul><li><p>Hello</p></li><li><p>World</p></li></ul><p></p>';
 const result = htmlToRichText(html);
