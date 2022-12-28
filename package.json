@@ -2,7 +2,7 @@
   "name": "contentful-html-to-richtext",
   "version": "1.0.0",
   "description": "Transform HTML into contentful's rich-text format",
-  "homepage": "TODO",
+  "homepage": "https://sodo-teo.vercel.app/",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": ["lib/**/*"],
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "TODO"
+    "url": "https://github.com/SodoTeo/contentful-html-to-richtext"
   },
   "keywords": [
     "html",
@@ -33,7 +33,7 @@
     "conversion"
   ],
   "author": "Teodor-Mihail Sodolescu",
-  "license": "ISC",
+  "license": "GPL-3.0-or-later",
   "dependencies": {
     "html-entities": "^2.3.3",
     "htmlparser2": "^8.0.1",
