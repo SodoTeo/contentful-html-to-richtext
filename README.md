@@ -7,6 +7,25 @@ needs to convert HTML to contentful's rich-text format, whether for the purpose 
 
 **This module is under development and in beta**
 
+## Current Status
+
+| Verified      | In development     |
+| ------------- |:------------------:|
+| `<ul>`        | `<embedded-asset>` |
+| `<li>`        | `<inline-entry>`   |
+| `<ol>`        | `<embedded-entry>` |
+| `<b>`         | `<entry-hyperlink>`|
+| `<u>`         | `<td>`             |
+| `<i>`         | `<th>`             |
+| `<p>`         | `<tr>`             |
+| `<br />`      | `<table>`          |
+| `<code>`      | `<img>`            |
+| `<a>`         |                    |
+| `<h{1-6}>`    |                    |
+| `<hr>`        |                    |
+| `<blockquote>`|                    |
+| `<p>`         |                    |
+
 ## Installation
 
 Using npm:
@@ -16,14 +35,13 @@ Using npm:
 ## Usage
 
 ```
-const { parseHtml } = require('contentful-html-to-richtext');
+const { htmlToRichText } = require('contentful-html-to-richtext');
 
-const html = '<ul><li><p>Hello</p></li><li><p>World</p></li><li><p>!</p></li></ul><p></p>';
-const result = parseHtml(html);
-console.log(result);
+const html = '<ul><li><p>Hello</p></li><li><p>World</p></li></ul><p></p>';
+const result = htmlToRichText(html);
 ```
 
-Output:
+## Output:
 
 ```
   {
@@ -70,37 +88,7 @@ Output:
 }
 ```
 
-## Current Status
+## Git Repository
 
-### Verified
-
-- `<ul>`
-- `<ol>`
-- `<li>`
-- `<b>`
-- `<u>`
-- `<i>`
-- `<p>`
-- `<hr>`
-- `<blockquote>`
-- `<p>`
-- `<h{1-6}>`
-- `<a>`
-- `<code>`
-- `<br />`
-
-### In development
-
-- `<img>`
-- `<table>`
-- `<tr>`
-- `<th>`
-- `<td>`
-- `<entry-hyperlink>`
-- `<embedded-entry>`
-- `<inline-entry>`
-- `<embedded-asset>`
-
-##Git Repository
-
+https://github.com/SodoTeo/contentful-html-to-richtext
 
