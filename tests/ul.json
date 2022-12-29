@@ -1,78 +1,60 @@
 {
+  "nodeType": "document",
   "data": {},
   "content": [
     {
+      "nodeType": "unordered-list",
       "data": {},
       "content": [
         {
+          "nodeType": "list-item",
           "data": {},
           "content": [
             {
+              "nodeType": "paragraph",
               "data": {},
               "content": [
                 {
-                  "data": {},
+                  "nodeType": "text",
+                  "value": "First",
                   "marks": [],
-                  "value": "hello",
-                  "nodeType": "text"
+                  "data": {}
                 }
-              ],
-              "nodeType": "paragraph"
+              ]
             }
-          ],
-          "nodeType": "list-item"
+          ]
         },
         {
+          "nodeType": "list-item",
           "data": {},
           "content": [
             {
+              "nodeType": "paragraph",
               "data": {},
               "content": [
                 {
-                  "data": {},
+                  "nodeType": "text",
+                  "value": "Second",
                   "marks": [],
-                  "value": "world",
-                  "nodeType": "text"
+                  "data": {}
                 }
-              ],
-              "nodeType": "paragraph"
+              ]
             }
-          ],
-          "nodeType": "list-item"
-        },
-        {
-          "data": {},
-          "content": [
-            {
-              "data": {},
-              "content": [
-                {
-                  "data": {},
-                  "marks": [],
-                  "value": "again",
-                  "nodeType": "text"
-                }
-              ],
-              "nodeType": "paragraph"
-            }
-          ],
-          "nodeType": "list-item"
+          ]
         }
-      ],
-      "nodeType": "unordered-list"
+      ]
     },
     {
+      "nodeType": "paragraph",
       "data": {},
       "content": [
         {
-          "data": {},
-          "marks": [],
+          "nodeType": "text",
           "value": "",
-          "nodeType": "text"
+          "marks": [],
+          "data": {}
         }
-      ],
-      "nodeType": "paragraph"
+      ]
     }
-  ],
-  "nodeType": "document"
+  ]
 }

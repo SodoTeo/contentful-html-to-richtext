@@ -64,11 +64,11 @@ const transform = (dom: HTMLElement) => {
       if (!data.trim()) {
         return;
       }
-      newData = {
-        data: {},
-        marks: [],
-        value: data,
-        nodeType: type,
+      newData = {                  
+            nodeType: type,
+            value: data,
+            marks: [],
+            data: {}
       };
     } else if (type === 'tag') {
       switch (name) {
@@ -198,9 +198,9 @@ const transform = (dom: HTMLElement) => {
                 // append a p node
                 newContent = R.append(
                   {
+                    nodeType: 'paragraph',
                     data: {},
                     content: [],
-                    nodeType: 'paragraph',
                   },
                   newContent,
                 );
@@ -235,9 +235,9 @@ const transform = (dom: HTMLElement) => {
           }
 
           newData = {
+            nodeType: htmlAattribute[type][name],
             data: {},
             content,
-            nodeType: htmlAattribute[type][name],
           };
           break;
       }
@@ -256,10 +256,10 @@ function paragraph(subContent, nodeType) {
     subNodes = [
       [
         {
-          data: {},
-          marks: [],
-          value: '',
           nodeType: 'text',
+          value: '',
+          marks: [],
+          data: {},
         },
       ],
     ];
@@ -278,9 +278,9 @@ function paragraph(subContent, nodeType) {
   }
   const newData = R.map(
     (content) => ({
+      nodeType,
       data: {},
       content,
-      nodeType,
     }),
     subNodes,
   );
@@ -294,9 +294,9 @@ const manage = (err: Error, dom: any) => {
   }
 
   finalRichTextObj = {
+    nodeType: 'document',
     data: {},
     content: transform(dom),
-    nodeType: 'document',
   };
 };
 
