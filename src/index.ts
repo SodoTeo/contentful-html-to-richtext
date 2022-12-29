@@ -105,6 +105,7 @@ const transform = (dom: HTMLElement) => {
           break;
         case 'entry-hyperlink':
           newData = {
+            nodeType: htmlAattribute[type][name],
             data: {
               target: {
                 sys: {
@@ -122,7 +123,6 @@ const transform = (dom: HTMLElement) => {
                 data: {},
               },
             ],
-            nodeType: htmlAattribute[type][name],
           };
           break;
         case 'span':
