@@ -215,9 +215,9 @@ const transform = (dom: HTMLElement) => {
           }, content);
 
           newData = {
+            nodeType: htmlAattribute[type][name],
             data: {},
             content: newContent,
-            nodeType: htmlAattribute[type][name],
           };
           break;
         case 'p':
