@@ -1,0 +1,19 @@
+{
+    "nodeType": "document",
+    "data": {},
+    "content": [
+      {
+        "nodeType": "embedded-entry-block",
+        "data": {
+          "target": {
+            "sys": {
+              "id": "main-nav-title-industry",
+              "type": "Link",
+              "linkType": "Entry"
+            }
+          }
+        },
+        "content": []
+      }
+    ]
+}

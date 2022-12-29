@@ -38,21 +38,25 @@ const { htmlToRichText } = require('../lib/index');
 // console.log(JSON.stringify(sample, null, 2) );
 // throw new Error('test');
 const { documentToHtmlString } = require('@contentful/rich-text-html-renderer');
-const { BLOCKS } = require('@contentful/rich-text-types');
+const { BLOCKS, INLINES } = require('@contentful/rich-text-types');
 
 /**
  * Only for testing our `htmlToRichText()`
  */
 const runTest = (richText, extension = [], json) => {
     const options = {
-        renderNode: {
-            [BLOCKS.EMBEDDED_ASSET]: ({
-                data: {
-                    target: { fields }
-                }
-            }) =>
-                `<img src="${fields.file.url}" height="${fields.file.details.image.height}" width="${fields.file.details.image.width}" alt="${fields.description}"/>`
-        }
+      renderNode: {
+        [BLOCKS.EMBEDDED_ASSET]: ({
+          data: {
+            target: { fields },
+          },
+        }) =>
+          `<img src="${fields.file.url}" height="${fields.file.details.image.height}" width="${fields.file.details.image.width}" alt="${fields.description}"/>`,
+        [BLOCKS.EMBEDDED_ENTRY]: (node) => `<embedded-entry id="${node.data.target.sys.id}"/>`,
+        [BLOCKS.EMBEDDED_ASSET]: (node) => `<embedded-asset id="${node.data.target.sys.id}"/>`,
+        [INLINES.EMBEDDED_ENTRY]: (node) => `<inline-entry id="${node.data.target.sys.id}"/>`,
+        [INLINES.ENTRY_HYPERLINK]: (node) => `<entry-hyperlink id="${node.data.target.sys.id}">${node.content[0].value}</entry-hyperlink>`,
+      },
     };
     const html = documentToHtmlString(richText, options);
     // console.log(html);
@@ -68,19 +72,20 @@ const printRes = (title, file) => {
     console.log(color, status, '\x1b[0m', title); //valid
 };
 
-printRes('ul', './ul.json');
-printRes('Bold, Italic, Underline', './boldItalicUnderline.json');
-printRes('ol', './ol.json');
-printRes('hr', './hr.json');
-printRes('blockquote', './blockquote.json');
-printRes('headings', './headings.json');
-printRes('hyperlink', './hyperlink.json');
-printRes('codeblock', './codeblock.json');
-printRes('table', './table.json');
-printRes('table-header-cell', './table.json');
-printRes('table-row', './table.json');
-printRes('table-cell', './table.json');
-printRes('entry-hyperlink', './hyperlink.json');
+// printRes('ul', './ul.json');
+// printRes('Bold, Italic, Underline', './boldItalicUnderline.json');
+// printRes('ol', './ol.json');
+// printRes('hr', './hr.json');
+// printRes('blockquote', './blockquote.json');
+// printRes('headings', './headings.json');
+// printRes('hyperlink', './hyperlink.json');
+// printRes('codeblock', './codeblock.json');
+// printRes('table', './table.json');
+// printRes('table-header-cell', './table.json');
+// printRes('table-row', './table.json');
+// printRes('table-cell', './table.json');
+// printRes('entry-hyperlink', './hyperlink.json');
+printRes('embedded-entry', './embedded-entry.json');
 
 
 const htmlTest = (html, testHtml, log = false) => {

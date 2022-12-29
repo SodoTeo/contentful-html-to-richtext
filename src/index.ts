@@ -90,6 +90,7 @@ const transform = (dom: HTMLElement) => {
         case 'embedded-entry':
         case 'inline-entry':
           newData = {
+            nodeType: htmlAattribute[type][name],
             data: {
               target: {
                 sys: {
@@ -100,7 +101,6 @@ const transform = (dom: HTMLElement) => {
               },
             },
             content: [],
-            nodeType: htmlAattribute[type][name],
           };
           break;
         case 'entry-hyperlink':

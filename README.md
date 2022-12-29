@@ -100,13 +100,13 @@ import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 if (field.type === 'RichText') {
     const options = {
         renderNode: {
-            [BLOCKS.EMBEDDED_ENTRY]: (node:any) =>
+            [BLOCKS.EMBEDDED_ENTRY]: (node) =>
                 `<embedded-entry id="${node.data.target.sys.id}"/>`,
-            [BLOCKS.EMBEDDED_ASSET]: (node:any) =>
+            [BLOCKS.EMBEDDED_ASSET]: (node) =>
                 `<embedded-asset id="${node.data.target.sys.id}"/>`,
-            [INLINES.EMBEDDED_ENTRY]: (node:any) =>
+            [INLINES.EMBEDDED_ENTRY]: (node) =>
                 `<inline-entry id="${node.data.target.sys.id}"/>`,
-            [INLINES.ENTRY_HYPERLINK]: (node:any) =>
+            [INLINES.ENTRY_HYPERLINK]: (node) =>
                 `<entry-hyperlink id="${node.data.target.sys.id}">${node.content[0].value}</entry-hyperlink>`
         }
     };
