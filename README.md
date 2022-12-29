@@ -2,6 +2,7 @@
 ![npm type definitions](https://img.shields.io/npm/types/html-to-richtext-contentful)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/SodoTeo/contentful-html-to-richtext?color=success)
 ![GitHub](https://img.shields.io/github/license/SodoTeo/contentful-html-to-richtext)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/e80bd35b11d848c7a427c4efe6d923fc)](https://www.codacy.com/gh/SodoTeo/contentful-html-to-richtext/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=SodoTeo/contentful-html-to-richtext&amp;utm_campaign=Badge_Grade)
 
 
 Module that converts HTML to the [Contentful](https://www.contentful.com/) rich-text model. 
