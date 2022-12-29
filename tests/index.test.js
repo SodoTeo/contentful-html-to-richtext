@@ -75,7 +75,7 @@ printRes('ol', './ol.json');
 // printRes('blockquote', './blockquote.json');
 // printRes('headings', './headings.json');
 // printRes('hyperlink', './hyperlink.json');
-// printRes('codeblock', './codeblock.json');
+printRes('codeblock', './codeblock.json');
 printRes('table', './table.json');
 printRes('table-header-cell', './table.json');
 printRes('table-row', './table.json');

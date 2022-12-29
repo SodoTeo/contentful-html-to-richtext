@@ -1,22 +1,201 @@
 {
+  "nodeType": "document",
   "data": {},
   "content": [
     {
+      "nodeType": "paragraph",
       "data": {},
       "content": [
         {
-          "data": {},
+          "nodeType": "text",
+          "value": "constprintRes= (",
           "marks": [
             {
               "type": "code"
             }
           ],
-          "value": "<a href=\"www.sodoteo.com\"></a>",
-          "nodeType": "text"
+          "data": {}
+        },
+        {
+          "nodeType": "text",
+          "value": "title",
+          "marks": [
+            {
+              "type": "italic"
+            },
+            {
+              "type": "code"
+            }
+          ],
+          "data": {}
+        },
+        {
+          "nodeType": "text",
+          "value": ", ",
+          "marks": [
+            {
+              "type": "code"
+            }
+          ],
+          "data": {}
+        },
+        {
+          "nodeType": "text",
+          "value": "file",
+          "marks": [
+            {
+              "type": "italic"
+            },
+            {
+              "type": "code"
+            }
+          ],
+          "data": {}
+        },
+        {
+          "nodeType": "text",
+          "value": ") => {",
+          "marks": [
+            {
+              "type": "code"
+            }
+          ],
+          "data": {}
         }
-      ],
-      "nodeType": "paragraph"
+      ]
+    },
+    {
+      "nodeType": "paragraph",
+      "data": {},
+      "content": [
+        {
+          "nodeType": "text",
+          "value": "const res=runTest(require(",
+          "marks": [
+            {
+              "type": "code"
+            }
+          ],
+          "data": {}
+        },
+        {
+          "nodeType": "text",
+          "value": "file",
+          "marks": [
+            {
+              "type": "italic"
+            },
+            {
+              "type": "code"
+            }
+          ],
+          "data": {}
+        },
+        {
+          "nodeType": "text",
+          "value": "));",
+          "marks": [
+            {
+              "type": "code"
+            }
+          ],
+          "data": {}
+        }
+      ]
+    },
+    {
+      "nodeType": "paragraph",
+      "data": {},
+      "content": [
+        {
+          "nodeType": "text",
+          "value": "const color=res?'\\x1b[42m':'\\x1b[41m';",
+          "marks": [
+            {
+              "type": "code"
+            }
+          ],
+          "data": {}
+        }
+      ]
+    },
+    {
+      "nodeType": "paragraph",
+      "data": {},
+      "content": [
+        {
+          "nodeType": "text",
+          "value": "const status=res?'✓':'×';",
+          "marks": [
+            {
+              "type": "code"
+            }
+          ],
+          "data": {}
+        }
+      ]
+    },
+    {
+      "nodeType": "paragraph",
+      "data": {},
+      "content": [
+        {
+          "nodeType": "text",
+          "value": "console.log(color, status, '\\x1b[0m', ",
+          "marks": [
+            {
+              "type": "code"
+            }
+          ],
+          "data": {}
+        },
+        {
+          "nodeType": "text",
+          "value": "title",
+          "marks": [
+            {
+              "type": "italic"
+            },
+            {
+              "type": "code"
+            }
+          ],
+          "data": {}
+        },
+        {
+          "nodeType": "text",
+          "value": "); ",
+          "marks": [
+            {
+              "type": "code"
+            }
+          ],
+          "data": {}
+        },
+        {
+          "nodeType": "text",
+          "value": "//valid",
+          "marks": [
+            {
+              "type": "italic"
+            },
+            {
+              "type": "code"
+            }
+          ],
+          "data": {}
+        },
+        {
+          "nodeType": "text",
+          "value": "};",
+          "marks": [
+            {
+              "type": "code"
+            }
+          ],
+          "data": {}
+        }
+      ]
     }
-  ],
-  "nodeType": "document"
+  ]
 }
