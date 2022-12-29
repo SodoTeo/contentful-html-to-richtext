@@ -1,43 +1,100 @@
 {
+  "nodeType": "document",
   "data": {},
   "content": [
     {
+      "nodeType": "paragraph",
       "data": {},
       "content": [
         {
-          "data": {},
+          "nodeType": "text",
+          "value": "Im_bold",
           "marks": [
             {
               "type": "bold"
             }
           ],
-          "value": "Bold",
-          "nodeType": "text"
+          "data": {}
         }
-      ],
-      "nodeType": "paragraph"
+      ]
     },
     {
+      "nodeType": "paragraph",
       "data": {},
       "content": [
         {
-          "data": {},
+          "nodeType": "text",
+          "value": "im_italic",
           "marks": [
             {
               "type": "italic"
             }
           ],
-          "value": "Italic",
-          "nodeType": "text"
+          "data": {}
         }
-      ],
-      "nodeType": "paragraph"
+      ]
     },
     {
+      "nodeType": "paragraph",
       "data": {},
       "content": [
         {
-          "data": {},
+          "nodeType": "text",
+          "value": "im underline",
+          "marks": [
+            {
+              "type": "underline"
+            }
+          ],
+          "data": {}
+        }
+      ]
+    },
+    {
+      "nodeType": "paragraph",
+      "data": {},
+      "content": [
+        {
+          "nodeType": "text",
+          "value": "im_bold_italic",
+          "marks": [
+            {
+              "type": "bold"
+            },
+            {
+              "type": "italic"
+            }
+          ],
+          "data": {}
+        }
+      ]
+    },
+    {
+      "nodeType": "paragraph",
+      "data": {},
+      "content": [
+        {
+          "nodeType": "text",
+          "value": "im bold underline",
+          "marks": [
+            {
+              "type": "bold"
+            },
+            {
+              "type": "underline"
+            }
+          ],
+          "data": {}
+        }
+      ]
+    },
+    {
+      "nodeType": "paragraph",
+      "data": {},
+      "content": [
+        {
+          "nodeType": "text",
+          "value": "im italic underline",
           "marks": [
             {
               "type": "italic"
@@ -46,12 +103,9 @@
               "type": "underline"
             }
           ],
-          "value": "Underlined",
-          "nodeType": "text"
+          "data": {}
         }
-      ],
-      "nodeType": "paragraph"
+      ]
     }
-  ],
-  "nodeType": "document"
+  ]
 }

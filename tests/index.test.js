@@ -69,7 +69,7 @@ const printRes = (title, file) => {
 };
 
 printRes('ul', './ul.json');
-// printRes('Bold, Italic, Underline', './boldItalicUnderline.json');
+printRes('Bold, Italic, Underline', './boldItalicUnderline.json');
 // printRes('ol', './ol.json');
 // printRes('hr', './hr.json');
 // printRes('blockquote', './blockquote.json');
