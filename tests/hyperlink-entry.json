@@ -7,14 +7,20 @@
       "data": {},
       "content": [
         {
-          "nodeType": "hyperlink",
+          "nodeType": "entry-hyperlink",
           "data": {
-            "uri": "sodo-teo.vercel.app/"
+            "target": {
+              "sys": {
+                "id": "main-nav-title-industry",
+                "type": "Link",
+                "linkType": "Entry"
+              }
+            }
           },
           "content": [
             {
               "nodeType": "text",
-              "value": "Access my website",
+              "value": "title",
               "marks": [],
               "data": {}
             }

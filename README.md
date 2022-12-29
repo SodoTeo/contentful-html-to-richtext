@@ -4,7 +4,7 @@
 ![GitHub](https://img.shields.io/github/license/SodoTeo/contentful-html-to-richtext)
 
 
-Module that converts HTML to the [contentful](https://www.contentful.com/) rich-text model. 
+Module that converts HTML to the [Contentful](https://www.contentful.com/) rich-text model. 
 It was developed to assist in the process of migrating rich text content into contentful, a popular content management system. 
 The functionality has been thoroughly tested to ensure that it performs reliably. It is a useful tool for anyone who
 needs to convert HTML to contentful's rich-text format, whether for the purpose of migrating existing content or integrating with contentful's platform.
@@ -13,22 +13,19 @@ needs to convert HTML to contentful's rich-text format, whether for the purpose 
 
 ## Current Status
 
-| Verified      | In development     |
-| ------------- |:------------------:|
-| `<ul>`        | `<embedded-asset>` |
-| `<li>`        | `<inline-entry>`   |
-| `<ol>`        | `<embedded-entry>` |
-| `<b>`         | `<entry-hyperlink>`|
-| `<u>`         | `<td>`             |
-| `<i>`         | `<th>`             |
-| `<p>`         | `<tr>`             |
-| `<br />`      | `<table>`          |
-| `<code>`      | `<img>`            |
-| `<a>`         |                    |
-| `<h{1-6}>`    |                    |
-| `<hr>`        |                    |
-| `<blockquote>`|                    |
-| `<p>`         |                    |
+| Verified      | Verified           | Beta           |
+| ------------- |:------------------:|:--------------:|
+| `<ul>`        | `<embedded-asset>` | `<img>`        |
+| `<li>`        | `<inline-entry>`   |                |
+| `<ol>`        | `<embedded-entry>` |                |
+| `<b>`         | `<entry-hyperlink>`|                |
+| `<u>`         | `<td>`             |                |
+| `<i>`         | `<th>`             |                |
+| `<p>`         | `<tr>`             |                |
+| `<br />`      | `<table>`          |                |
+| `<code>`      | `<p>`              |                |
+| `<a>`         | `<hr>`             |                |
+| `<blockquote>`| `<h{1-6}>`         |                |
 
 ## Installation
 
@@ -41,7 +38,7 @@ Using [npm](https://www.npmjs.com/package/html-to-richtext-contentful):
 ```
 const { htmlToRichText } = require('html-to-richtext-contentfult');
 
-const html = '<ul><li><p>Hello</p></li><li><p>World</p></li></ul><p></p>';
+const html = '<table><tr><th><p>Name</p></th></tr><tr><td><p>SodoTeo</p></td></tr></table>';
 const result = htmlToRichText(html);
 ```
 
@@ -49,46 +46,106 @@ const result = htmlToRichText(html);
 
 ```
   {
+  "nodeType": "document",
   "data": {},
   "content": [
     {
+      "nodeType": "table",
       "data": {},
       "content": [
         {
+          "nodeType": "table-row",
           "data": {},
           "content": [
             {
+              "nodeType": "table-header-cell",
               "data": {},
-              "marks": [],
-              "value": "Hello",
-              "nodeType": "text"
+              "content": [
+                {
+                  "nodeType": "paragraph",
+                  "data": {},
+                  "content": [
+                    {
+                      "nodeType": "text",
+                      "value": "Name",
+                      "marks": [],
+                      "data": {}
+                    }
+                  ]
+                }
+              ]
             }
-          ],
-          "nodeType": "paragraph"
-        }
-      ],
-      "nodeType": "list-item"
-    },
-    {
-      "data": {},
-      "content": [
+          ]
+        },
         {
+          "nodeType": "table-row",
           "data": {},
           "content": [
             {
+              "nodeType": "table-cell",
               "data": {},
-              "marks": [],
-              "value": "World",
-              "nodeType": "text"
+              "content": [
+                {
+                  "nodeType": "paragraph",
+                  "data": {},
+                  "content": [
+                    {
+                      "nodeType": "text",
+                      "value": "SodoTeo",
+                      "marks": [],
+                      "data": {}
+                    }
+                  ]
+                }
+              ]
             }
-          ],
-          "nodeType": "paragraph"
+          ]
         }
-      ],
-      "nodeType": "list-item"
+      ]
     }
-  ],
-  "nodeType": "unordered-list"
+  ]
+}
+```
+
+```
+const { htmlToRichText } = require('html-to-richtext-contentfult');
+// id="<contentful-entry-id>"
+const html = '<p><entry-hyperlink id="main-nav-title-industry">title</entry-hyperlink></p>';
+const result = htmlToRichText(html);
+```
+
+```
+{
+  "nodeType": "document",
+  "data": {},
+  "content": [
+    {
+      "nodeType": "paragraph",
+      "data": {},
+      "content": [
+        {
+          "nodeType": "entry-hyperlink",
+          "data": {
+            "target": {
+              "sys": {
+                "id": "main-nav-title-industry",
+                "type": "Link",
+                "linkType": "Entry"
+              }
+            }
+          },
+          "content": [
+            {
+              "nodeType": "text",
+              "value": "title",
+              "marks": [],
+              "data": {}
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }
 ```
 
@@ -104,13 +161,13 @@ import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 if (field.type === 'RichText') {
     const options = {
         renderNode: {
-            [BLOCKS.EMBEDDED_ENTRY]: (node:any) =>
+            [BLOCKS.EMBEDDED_ENTRY]: (node) =>
                 `<embedded-entry id="${node.data.target.sys.id}"/>`,
-            [BLOCKS.EMBEDDED_ASSET]: (node:any) =>
+            [BLOCKS.EMBEDDED_ASSET]: (node) =>
                 `<embedded-asset id="${node.data.target.sys.id}"/>`,
-            [INLINES.EMBEDDED_ENTRY]: (node:any) =>
+            [INLINES.EMBEDDED_ENTRY]: (node) =>
                 `<inline-entry id="${node.data.target.sys.id}"/>`,
-            [INLINES.ENTRY_HYPERLINK]: (node:any) =>
+            [INLINES.ENTRY_HYPERLINK]: (node) =>
                 `<entry-hyperlink id="${node.data.target.sys.id}">${node.content[0].value}</entry-hyperlink>`
         }
     };

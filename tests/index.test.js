@@ -34,30 +34,34 @@ const compare = (transformed, richText, html, extension = [], json) => {
 };
 
 const { htmlToRichText } = require('../lib/index');
-let sample = htmlToRichText('<table><tr><th>Name</th><th>Age</th></tr><tr><td>John</td><td>30</td></tr></table>');
+// let sample = htmlToRichText('<p><table><tr><th>Name</th><th>Age</th></tr><tr><td>John</td><td>30</td></tr></table></p>');
 // console.log(JSON.stringify(sample, null, 2) );
 // throw new Error('test');
 const { documentToHtmlString } = require('@contentful/rich-text-html-renderer');
-const { BLOCKS } = require('@contentful/rich-text-types');
+const { BLOCKS, INLINES } = require('@contentful/rich-text-types');
 
 /**
  * Only for testing our `htmlToRichText()`
  */
 const runTest = (richText, extension = [], json) => {
     const options = {
-        renderNode: {
-            [BLOCKS.EMBEDDED_ASSET]: ({
-                data: {
-                    target: { fields }
-                }
-            }) =>
-                `<img src="${fields.file.url}" height="${fields.file.details.image.height}" width="${fields.file.details.image.width}" alt="${fields.description}"/>`
-        }
+      renderNode: {
+        [BLOCKS.EMBEDDED_ASSET]: ({
+          data: {
+            target: { fields },
+          },
+        }) =>
+          `<img src="${fields.file.url}" height="${fields.file.details.image.height}" width="${fields.file.details.image.width}" alt="${fields.description}"/>`,
+        [BLOCKS.EMBEDDED_ENTRY]: (node) => `<embedded-entry id="${node.data.target.sys.id}"/>`,
+        [BLOCKS.EMBEDDED_ASSET]: (node) => `<embedded-asset id="${node.data.target.sys.id}"/>`,
+        [INLINES.EMBEDDED_ENTRY]: (node) => `<inline-entry id="${node.data.target.sys.id}"/>`,
+        [INLINES.ENTRY_HYPERLINK]: (node) => `<entry-hyperlink id="${node.data.target.sys.id}">${node.content[0].value}</entry-hyperlink>`,
+      },
     };
     const html = documentToHtmlString(richText, options);
-
+    // console.log(html);
     const transformed = htmlToRichText(html);
-
+    // console.log(JSON.stringify(transformed, null, 2));
     return compare(transformed, richText, html, extension, json);
 };
 
@@ -68,14 +72,22 @@ const printRes = (title, file) => {
     console.log(color, status, '\x1b[0m', title); //valid
 };
 
-printRes('Bold, Italic, Underline', './boldItalicUnderline.json');
 printRes('ul', './ul.json');
+printRes('Bold, Italic, Underline', './boldItalicUnderline.json');
 printRes('ol', './ol.json');
 printRes('hr', './hr.json');
 printRes('blockquote', './blockquote.json');
 printRes('headings', './headings.json');
 printRes('hyperlink', './hyperlink.json');
 printRes('codeblock', './codeblock.json');
+printRes('table', './table.json');
+printRes('table-header-cell', './table.json');
+printRes('table-row', './table.json');
+printRes('table-cell', './table.json');
+printRes('entry-hyperlink', './hyperlink-entry.json');
+printRes('embedded-entry', './embedded-entry.json');
+printRes('embedded-asset', './embedded-asset.json');
+
 
 const htmlTest = (html, testHtml, log = false) => {
     const json = htmlToRichText(html);

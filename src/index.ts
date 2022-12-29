@@ -64,16 +64,17 @@ const transform = (dom: HTMLElement) => {
       if (!data.trim()) {
         return;
       }
-      newData = {
-        data: {},
-        marks: [],
-        value: data,
-        nodeType: type,
+      newData = {                  
+            nodeType: type,
+            value: data,
+            marks: [],
+            data: {}
       };
     } else if (type === 'tag') {
       switch (name) {
         case 'embedded-asset':
           newData = {
+            nodeType: htmlAattribute[type][name],
             data: {
               target: {
                 sys: {
@@ -84,12 +85,12 @@ const transform = (dom: HTMLElement) => {
               },
             },
             content: [],
-            nodeType: htmlAattribute[type][name],
           };
           break;
         case 'embedded-entry':
         case 'inline-entry':
           newData = {
+            nodeType: htmlAattribute[type][name],
             data: {
               target: {
                 sys: {
@@ -100,11 +101,11 @@ const transform = (dom: HTMLElement) => {
               },
             },
             content: [],
-            nodeType: htmlAattribute[type][name],
           };
           break;
         case 'entry-hyperlink':
           newData = {
+            nodeType: htmlAattribute[type][name],
             data: {
               target: {
                 sys: {
@@ -122,7 +123,6 @@ const transform = (dom: HTMLElement) => {
                 data: {},
               },
             ],
-            nodeType: htmlAattribute[type][name],
           };
           break;
         case 'span':
@@ -180,9 +180,9 @@ const transform = (dom: HTMLElement) => {
           break;
         case 'a':
           newData = {
+            nodeType: htmlAattribute[type][name],
             data: { uri: R.propOr('', 'href', attribs) },
             content,
-            nodeType: htmlAattribute[type][name],
           };
           break;
         case 'li':
@@ -198,9 +198,9 @@ const transform = (dom: HTMLElement) => {
                 // append a p node
                 newContent = R.append(
                   {
+                    nodeType: 'paragraph',
                     data: {},
                     content: [],
-                    nodeType: 'paragraph',
                   },
                   newContent,
                 );
@@ -215,9 +215,9 @@ const transform = (dom: HTMLElement) => {
           }, content);
 
           newData = {
+            nodeType: htmlAattribute[type][name],
             data: {},
             content: newContent,
-            nodeType: htmlAattribute[type][name],
           };
           break;
         case 'p':
@@ -235,9 +235,9 @@ const transform = (dom: HTMLElement) => {
           }
 
           newData = {
+            nodeType: htmlAattribute[type][name],
             data: {},
             content,
-            nodeType: htmlAattribute[type][name],
           };
           break;
       }
@@ -256,10 +256,10 @@ function paragraph(subContent, nodeType) {
     subNodes = [
       [
         {
-          data: {},
-          marks: [],
-          value: '',
           nodeType: 'text',
+          value: '',
+          marks: [],
+          data: {},
         },
       ],
     ];
@@ -278,9 +278,9 @@ function paragraph(subContent, nodeType) {
   }
   const newData = R.map(
     (content) => ({
+      nodeType,
       data: {},
       content,
-      nodeType,
     }),
     subNodes,
   );
@@ -294,9 +294,9 @@ const manage = (err: Error, dom: any) => {
   }
 
   finalRichTextObj = {
+    nodeType: 'document',
     data: {},
     content: transform(dom),
-    nodeType: 'document',
   };
 };
 

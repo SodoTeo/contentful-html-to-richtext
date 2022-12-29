@@ -1,96 +1,90 @@
 {
+  "nodeType": "document",
   "data": {},
   "content": [
     {
+      "nodeType": "ordered-list",
       "data": {},
       "content": [
         {
+          "nodeType": "list-item",
           "data": {},
           "content": [
             {
+              "nodeType": "paragraph",
               "data": {},
               "content": [
                 {
-                  "data": {},
-                  "marks": [],
-                  "value": "hello",
-                  "nodeType": "text"
+                  "nodeType": "text",
+                  "value": "one",
+                  "marks": [
+                    {
+                      "type": "bold"
+                    }
+                  ],
+                  "data": {}
                 }
-              ],
-              "nodeType": "paragraph"
+              ]
             }
-          ],
-          "nodeType": "list-item"
+          ]
         },
         {
+          "nodeType": "list-item",
           "data": {},
           "content": [
             {
+              "nodeType": "paragraph",
               "data": {},
               "content": [
                 {
-                  "data": {},
-                  "marks": [],
-                  "value": "world",
-                  "nodeType": "text"
+                  "nodeType": "text",
+                  "value": "two",
+                  "marks": [
+                    {
+                      "type": "italic"
+                    }
+                  ],
+                  "data": {}
                 }
-              ],
-              "nodeType": "paragraph"
+              ]
             }
-          ],
-          "nodeType": "list-item"
+          ]
         },
         {
+          "nodeType": "list-item",
           "data": {},
           "content": [
             {
+              "nodeType": "paragraph",
               "data": {},
               "content": [
                 {
-                  "data": {},
-                  "marks": [],
-                  "value": "!",
-                  "nodeType": "text"
+                  "nodeType": "text",
+                  "value": "three",
+                  "marks": [
+                    {
+                      "type": "underline"
+                    }
+                  ],
+                  "data": {}
                 }
-              ],
-              "nodeType": "paragraph"
+              ]
             }
-          ],
-          "nodeType": "list-item"
-        },
-        {
-          "data": {},
-          "content": [
-            {
-              "data": {},
-              "content": [
-                {
-                  "data": {},
-                  "marks": [],
-                  "value": "",
-                  "nodeType": "text"
-                }
-              ],
-              "nodeType": "paragraph"
-            }
-          ],
-          "nodeType": "list-item"
+          ]
         }
-      ],
-      "nodeType": "ordered-list"
+      ]
     },
     {
+      "nodeType": "paragraph",
       "data": {},
       "content": [
         {
-          "data": {},
-          "marks": [],
+          "nodeType": "text",
           "value": "",
-          "nodeType": "text"
+          "marks": [],
+          "data": {}
         }
-      ],
-      "nodeType": "paragraph"
+      ]
     }
-  ],
-  "nodeType": "document"
+  ]
 }
