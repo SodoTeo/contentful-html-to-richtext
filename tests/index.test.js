@@ -72,20 +72,21 @@ const printRes = (title, file) => {
     console.log(color, status, '\x1b[0m', title); //valid
 };
 
-// printRes('ul', './ul.json');
-// printRes('Bold, Italic, Underline', './boldItalicUnderline.json');
-// printRes('ol', './ol.json');
-// printRes('hr', './hr.json');
-// printRes('blockquote', './blockquote.json');
-// printRes('headings', './headings.json');
-// printRes('hyperlink', './hyperlink.json');
-// printRes('codeblock', './codeblock.json');
-// printRes('table', './table.json');
-// printRes('table-header-cell', './table.json');
-// printRes('table-row', './table.json');
-// printRes('table-cell', './table.json');
-// printRes('entry-hyperlink', './hyperlink.json');
+printRes('ul', './ul.json');
+printRes('Bold, Italic, Underline', './boldItalicUnderline.json');
+printRes('ol', './ol.json');
+printRes('hr', './hr.json');
+printRes('blockquote', './blockquote.json');
+printRes('headings', './headings.json');
+printRes('hyperlink', './hyperlink.json');
+printRes('codeblock', './codeblock.json');
+printRes('table', './table.json');
+printRes('table-header-cell', './table.json');
+printRes('table-row', './table.json');
+printRes('table-cell', './table.json');
+printRes('entry-hyperlink', './hyperlink.json');
 printRes('embedded-entry', './embedded-entry.json');
+printRes('embedded-asset', './embedded-asset.json');
 
 
 const htmlTest = (html, testHtml, log = false) => {

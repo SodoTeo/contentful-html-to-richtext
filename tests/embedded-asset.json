@@ -1,0 +1,20 @@
+
+{
+    "nodeType": "document",
+    "data": {},
+    "content": [
+      {
+        "nodeType": "embedded-asset-block",
+        "data": {
+          "target": {
+            "sys": {
+              "id": "6u6gZCEjS93Nn0QBjPmyRy",
+              "type": "Link",
+              "linkType": "Asset"
+            }
+          }
+        },
+        "content": []
+      }
+    ]
+}

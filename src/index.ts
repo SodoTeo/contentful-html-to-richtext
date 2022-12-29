@@ -74,6 +74,7 @@ const transform = (dom: HTMLElement) => {
       switch (name) {
         case 'embedded-asset':
           newData = {
+            nodeType: htmlAattribute[type][name],
             data: {
               target: {
                 sys: {
@@ -84,7 +85,6 @@ const transform = (dom: HTMLElement) => {
               },
             },
             content: [],
-            nodeType: htmlAattribute[type][name],
           };
           break;
         case 'embedded-entry':
