@@ -1,90 +1,90 @@
 {
+  "nodeType": "document",
   "data": {},
   "content": [
     {
+      "nodeType": "heading-1",
       "data": {},
       "content": [
         {
-          "data": {},
-          "marks": [],
+          "nodeType": "text",
           "value": "h1",
-          "nodeType": "text"
+          "marks": [],
+          "data": {}
         }
-      ],
-      "nodeType": "heading-1"
+      ]
     },
     {
+      "nodeType": "heading-2",
       "data": {},
       "content": [
         {
-          "data": {},
-          "marks": [],
+          "nodeType": "text",
           "value": "h2",
-          "nodeType": "text"
+          "marks": [],
+          "data": {}
         }
-      ],
-      "nodeType": "heading-2"
+      ]
     },
     {
+      "nodeType": "heading-3",
       "data": {},
       "content": [
         {
-          "data": {},
-          "marks": [],
+          "nodeType": "text",
           "value": "h3",
-          "nodeType": "text"
+          "marks": [],
+          "data": {}
         }
-      ],
-      "nodeType": "heading-3"
+      ]
     },
     {
+      "nodeType": "heading-4",
       "data": {},
       "content": [
         {
-          "data": {},
-          "marks": [],
+          "nodeType": "text",
           "value": "h4",
-          "nodeType": "text"
+          "marks": [],
+          "data": {}
         }
-      ],
-      "nodeType": "heading-4"
+      ]
     },
     {
+      "nodeType": "heading-5",
       "data": {},
       "content": [
         {
-          "data": {},
-          "marks": [],
+          "nodeType": "text",
           "value": "h5",
-          "nodeType": "text"
+          "marks": [],
+          "data": {}
         }
-      ],
-      "nodeType": "heading-5"
+      ]
     },
     {
+      "nodeType": "heading-6",
       "data": {},
       "content": [
         {
-          "data": {},
-          "marks": [],
+          "nodeType": "text",
           "value": "h6",
-          "nodeType": "text"
+          "marks": [],
+          "data": {}
         }
-      ],
-      "nodeType": "heading-6"
+      ]
     },
     {
+      "nodeType": "paragraph",
       "data": {},
       "content": [
         {
-          "data": {},
-          "marks": [],
+          "nodeType": "text",
           "value": "",
-          "nodeType": "text"
+          "marks": [],
+          "data": {}
         }
-      ],
-      "nodeType": "paragraph"
+      ]
     }
-  ],
-  "nodeType": "document"
+  ]
 }

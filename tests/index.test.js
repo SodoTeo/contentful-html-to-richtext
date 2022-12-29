@@ -73,7 +73,7 @@ printRes('Bold, Italic, Underline', './boldItalicUnderline.json');
 printRes('ol', './ol.json');
 printRes('hr', './hr.json');
 printRes('blockquote', './blockquote.json');
-// printRes('headings', './headings.json');
+printRes('headings', './headings.json');
 // printRes('hyperlink', './hyperlink.json');
 printRes('codeblock', './codeblock.json');
 printRes('table', './table.json');
