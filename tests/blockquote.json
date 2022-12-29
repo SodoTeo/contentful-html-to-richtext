@@ -1,36 +1,36 @@
 {
+  "nodeType": "document",
   "data": {},
   "content": [
     {
+      "nodeType": "blockquote",
       "data": {},
       "content": [
         {
+          "nodeType": "paragraph",
           "data": {},
           "content": [
             {
-              "data": {},
+              "nodeType": "text",
+              "value": "It is what it is",
               "marks": [],
-              "value": "hello",
-              "nodeType": "text"
+              "data": {}
             }
-          ],
-          "nodeType": "paragraph"
+          ]
         }
-      ],
-      "nodeType": "blockquote"
+      ]
     },
     {
+      "nodeType": "paragraph",
       "data": {},
       "content": [
         {
-          "data": {},
-          "marks": [],
+          "nodeType": "text",
           "value": "",
-          "nodeType": "text"
+          "marks": [],
+          "data": {}
         }
-      ],
-      "nodeType": "paragraph"
+      ]
     }
-  ],
-  "nodeType": "document"
+  ]
 }
