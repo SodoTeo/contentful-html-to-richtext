@@ -27,24 +27,6 @@
                     ]
                   }
                 ]
-              },
-              {
-                "nodeType": "table-header-cell",
-                "data": {},
-                "content": [
-                  {
-                    "nodeType": "paragraph",
-                    "data": {},
-                    "content": [
-                      {
-                        "nodeType": "text",
-                        "value": "Age",
-                        "marks": [],
-                        "data": {}
-                      }
-                    ]
-                  }
-                ]
               }
             ]
           },
@@ -62,7 +44,7 @@
                     "content": [
                       {
                         "nodeType": "text",
-                        "value": "John",
+                        "value": "SodoTeo",
                         "marks": [],
                         "data": {}
                       }

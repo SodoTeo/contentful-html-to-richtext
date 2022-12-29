@@ -84,7 +84,7 @@ printRes('table', './table.json');
 printRes('table-header-cell', './table.json');
 printRes('table-row', './table.json');
 printRes('table-cell', './table.json');
-printRes('entry-hyperlink', './hyperlink.json');
+printRes('entry-hyperlink', './hyperlink-entry.json');
 printRes('embedded-entry', './embedded-entry.json');
 printRes('embedded-asset', './embedded-asset.json');
 
