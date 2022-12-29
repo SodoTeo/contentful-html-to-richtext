@@ -9,7 +9,7 @@ It was developed to assist in the process of migrating rich text content into co
 The functionality has been thoroughly tested to ensure that it performs reliably. It is a useful tool for anyone who
 needs to convert HTML to contentful's rich-text format, whether for the purpose of migrating existing content or integrating with contentful's platform.
 
-**This module is under development and in beta**
+**This module is under development**
 
 ## Current Status
 
