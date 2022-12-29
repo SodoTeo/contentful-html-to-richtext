@@ -1,26 +1,26 @@
 {
+  "nodeType": "document",
   "data": {},
   "content": [
     {
+      "nodeType": "paragraph",
       "data": {},
       "content": [
         {
+          "nodeType": "hyperlink",
           "data": {
-            "uri": "http://www.sodoteo.com"
+            "uri": "sodo-teo.vercel.app/"
           },
           "content": [
             {
-              "data": {},
+              "nodeType": "text",
+              "value": "Access my website",
               "marks": [],
-              "value": "heya",
-              "nodeType": "text"
+              "data": {}
             }
-          ],
-          "nodeType": "hyperlink"
+          ]
         }
-      ],
-      "nodeType": "paragraph"
+      ]
     }
-  ],
-  "nodeType": "document"
+  ]
 }

@@ -55,9 +55,9 @@ const runTest = (richText, extension = [], json) => {
         }
     };
     const html = documentToHtmlString(richText, options);
-    //console.log(html);
+    // console.log(html);
     const transformed = htmlToRichText(html);
-    //console.log(JSON.stringify(transformed, null, 2));
+    // console.log(JSON.stringify(transformed, null, 2));
     return compare(transformed, richText, html, extension, json);
 };
 
@@ -74,7 +74,7 @@ printRes('ol', './ol.json');
 printRes('hr', './hr.json');
 printRes('blockquote', './blockquote.json');
 printRes('headings', './headings.json');
-// printRes('hyperlink', './hyperlink.json');
+printRes('hyperlink', './hyperlink.json');
 printRes('codeblock', './codeblock.json');
 printRes('table', './table.json');
 printRes('table-header-cell', './table.json');

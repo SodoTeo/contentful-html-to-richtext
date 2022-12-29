@@ -180,9 +180,9 @@ const transform = (dom: HTMLElement) => {
           break;
         case 'a':
           newData = {
+            nodeType: htmlAattribute[type][name],
             data: { uri: R.propOr('', 'href', attribs) },
             content,
-            nodeType: htmlAattribute[type][name],
           };
           break;
         case 'li':
