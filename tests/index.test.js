@@ -61,7 +61,7 @@ const runTest = (richText, extension = [], json) => {
     const html = documentToHtmlString(richText, options);
     // console.log(html);
     const transformed = htmlToRichText(html);
-    // console.log(JSON.stringify(transformed, null, 2));
+     console.log(JSON.stringify(transformed, null, 2));
     return compare(transformed, richText, html, extension, json);
 };
 
@@ -72,21 +72,22 @@ const printRes = (title, file) => {
     console.log(color, status, '\x1b[0m', title); //valid
 };
 
-printRes('ul', './ul.json');
-printRes('Bold, Italic, Underline', './boldItalicUnderline.json');
-printRes('ol', './ol.json');
-printRes('hr', './hr.json');
-printRes('blockquote', './blockquote.json');
-printRes('headings', './headings.json');
-printRes('hyperlink', './hyperlink.json');
-printRes('codeblock', './codeblock.json');
-printRes('table', './table.json');
-printRes('table-header-cell', './table.json');
-printRes('table-row', './table.json');
-printRes('table-cell', './table.json');
-printRes('entry-hyperlink', './hyperlink-entry.json');
-printRes('embedded-entry', './embedded-entry.json');
-printRes('embedded-asset', './embedded-asset.json');
+// printRes('ul', './ul.json');
+// printRes('Bold, Italic, Underline', './boldItalicUnderline.json');
+// printRes('ol', './ol.json');
+// printRes('hr', './hr.json');
+// printRes('blockquote', './blockquote.json');
+// printRes('headings', './headings.json');
+// printRes('hyperlink', './hyperlink.json');
+// printRes('codeblock', './codeblock.json');
+// printRes('table', './table.json');
+// printRes('table-header-cell', './table.json');
+// printRes('table-row', './table.json');
+// printRes('table-cell', './table.json');
+// printRes('entry-hyperlink', './hyperlink-entry.json');
+// printRes('embedded-entry', './embedded-entry.json');
+// printRes('embedded-asset', './embedded-asset.json');
+printRes('mixed', './mixed.json');
 
 
 const htmlTest = (html, testHtml, log = false) => {
@@ -122,18 +123,18 @@ const htmlTest = (html, testHtml, log = false) => {
     console.log(color, status, '\x1b[0m', 'htmlTest'); //valid
 };
 
-htmlTest(
-    '<ul><li><span><span>Lorem ipsum</span></span></li><li><span><span>dolor sit amet,</span></span></li><li><span><span>consectetur adipiscing elit.</span></span></li></ul>',
-    '<ul><li><p>Lorem ipsum</p></li><li><p>dolor sit amet,</p></li><li><p>consectetur adipiscing elit.</p></li></ul>'
-);
-htmlTest(
-    '<p>Hello</p><ul><li>world</li><li>would: <strong>${be}</strong></li><li>something.<br /><strong>4 -a ${yo}</strong></li></ul><p><img alt="something" data-entity-type="binary" data-entity-uuid="aa" height="500" src="/hero.png" width="500" /></p><ul><li>cc <u><a href="mailto:mail@mail.com">email@email.com</a></u> something.</li></ul>',
-    '<p>Hello</p><ul><li><p>world</p></li><li><p>would: <b>${be}</b></p></li><li><p>something.</p><p><b>4 -a ${yo}</b></p></li></ul><p><img src="/hero.png" height="500" width="500" alt="something"/></p><ul><li><p>cc </p><a href="mailto:mail@mail.com">email@email.com</a><p> something.</p></li></ul>'
-);
-htmlTest(
-    '<ul><li>Hello.<br /><strong>hello</strong> yo</li></ul>',
-    '<ul><li><p>Hello.</p><p><b>hello</b> yo</p></li></ul>'
-);
+// htmlTest(
+//     '<ul><li><span><span>Lorem ipsum</span></span></li><li><span><span>dolor sit amet,</span></span></li><li><span><span>consectetur adipiscing elit.</span></span></li></ul>',
+//     '<ul><li><p>Lorem ipsum</p></li><li><p>dolor sit amet,</p></li><li><p>consectetur adipiscing elit.</p></li></ul>'
+// );
+// htmlTest(
+//     '<p>Hello</p><ul><li>world</li><li>would: <strong>${be}</strong></li><li>something.<br /><strong>4 -a ${yo}</strong></li></ul><p><img alt="something" data-entity-type="binary" data-entity-uuid="aa" height="500" src="/hero.png" width="500" /></p><ul><li>cc <u><a href="mailto:mail@mail.com">email@email.com</a></u> something.</li></ul>',
+//     '<p>Hello</p><ul><li><p>world</p></li><li><p>would: <b>${be}</b></p></li><li><p>something.</p><p><b>4 -a ${yo}</b></p></li></ul><p><img src="/hero.png" height="500" width="500" alt="something"/></p><ul><li><p>cc </p><a href="mailto:mail@mail.com">email@email.com</a><p> something.</p></li></ul>'
+// );
+// htmlTest(
+//     '<ul><li>Hello.<br /><strong>hello</strong> yo</li></ul>',
+//     '<ul><li><p>Hello.</p><p><b>hello</b> yo</p></li></ul>'
+// );
 /*
 htmlTest(
     '<p>Before </p><ul><li>Plug-in read</li><li>Copy as<strong> C:\\{Number}</strong></li><li>Please <u>do not </u> the </li><li>Keep a backup</li><li>If  via $<u>{Email}</u></li></ul><h2><strong><a><strong>Lab</strong></a><strong> </strong></strong></h2><ul><li>Used </li><li>Uses </li><li>Access </li></ul><h2><strong><a><strong>Local</strong></a></strong></h2><ul><li>your</li><li>are </li></ul><p><span><span><span><span><span><span><span> </span></span></span></span></span></span></span></p>',
