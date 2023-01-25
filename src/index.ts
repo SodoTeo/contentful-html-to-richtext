@@ -53,7 +53,6 @@ const transform = (dom: HTMLElement) => {
 
   R.forEach((element: Element) => {
     const { type, name, data, attribs, children } = element;
-    // console.log(element);
     let content = [];
     let newData = {};
     if (children) {
@@ -176,7 +175,23 @@ const transform = (dom: HTMLElement) => {
         case 'b':
         case 'strong':
         case 'u':
-          newData = R.assoc('marks', R.append({ type: htmlAattribute[type][name] }, content[0].marks), content[0]);
+          const defaultContent = {
+            nodeType: "text",
+            value: "",
+            marks: [
+              {
+                type: `${htmlAattribute[type][name]}`
+              }
+            ],
+            data: {}
+          };
+
+          if (Array.isArray(content) && content.length > 0) {
+            const newMarks = content[0].marks ? [...content[0].marks, { type: htmlAattribute[type][name] }] : [{ type: htmlAattribute[type][name] }];
+            newData = { ...content[0], marks: newMarks };
+          } else {
+            newData = { ...defaultContent };
+          }
           break;
         case 'a':
           newData = {

@@ -37,7 +37,7 @@ Using [npm](https://www.npmjs.com/package/html-to-richtext-contentful):
 ## Usage
 
 ```
-const { htmlToRichText } = require('html-to-richtext-contentfult');
+import { htmlToRichText } from 'html-to-richtext-contentful';
 
 const html = '<table><tr><th><p>Name</p></th></tr><tr><td><p>SodoTeo</p></td></tr></table>';
 const result = htmlToRichText(html);
