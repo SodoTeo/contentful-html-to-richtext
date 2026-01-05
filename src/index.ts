@@ -31,6 +31,7 @@ const htmlAattribute = {
     img: 'embedded-asset-block',
     span: 'text',
     'entry-hyperlink': 'entry-hyperlink',
+    'asset-hyperlink': 'asset-hyperlink',
     'embedded-entry': 'embedded-entry-block',
     'inline-entry': 'embedded-entry-inline',
     'embedded-asset': 'embedded-asset-block',
@@ -60,14 +61,11 @@ const transform = (dom: HTMLElement) => {
     }
 
     if (type === 'text') {
-      if (!data.trim()) {
-        return;
-      }
-      newData = {                  
-            nodeType: type,
-            value: data,
-            marks: [],
-            data: {}
+      newData = {
+        nodeType: type,
+        value: data,
+        marks: [],
+        data: {},
       };
     } else if (type === 'tag') {
       switch (name) {
@@ -111,6 +109,28 @@ const transform = (dom: HTMLElement) => {
                   id: `${attribs.id}`,
                   type: 'Link',
                   linkType: 'Entry',
+                },
+              },
+            },
+            content: [
+              {
+                nodeType: 'text',
+                value: `${children[0].data}`,
+                marks: [],
+                data: {},
+              },
+            ],
+          };
+          break;
+        case 'asset-hyperlink':
+          newData = {
+            nodeType: htmlAattribute[type][name],
+            data: {
+              target: {
+                sys: {
+                  id: `${attribs.id}`,
+                  type: 'Link',
+                  linkType: 'Asset',
                 },
               },
             },
@@ -176,18 +196,20 @@ const transform = (dom: HTMLElement) => {
         case 'strong':
         case 'u':
           const defaultContent = {
-            nodeType: "text",
-            value: "",
+            nodeType: 'text',
+            value: '',
             marks: [
               {
-                type: `${htmlAattribute[type][name]}`
-              }
+                type: `${htmlAattribute[type][name]}`,
+              },
             ],
-            data: {}
+            data: {},
           };
 
           if (Array.isArray(content) && content.length > 0) {
-            const newMarks = content[0].marks ? [...content[0].marks, { type: htmlAattribute[type][name] }] : [{ type: htmlAattribute[type][name] }];
+            const newMarks = content[0].marks
+              ? [...content[0].marks, { type: htmlAattribute[type][name] }]
+              : [{ type: htmlAattribute[type][name] }];
             newData = { ...content[0], marks: newMarks };
           } else {
             newData = { ...defaultContent };
@@ -290,6 +312,32 @@ function paragraph(subContent, nodeType) {
       subNodes = R.concat(subNodes, split);
       brIndex = R.findIndex(R.propEq('nodeType', 'br'), R.last(subNodes));
     }
+
+    // Add empty text nodes after hyperlinks and inline elements
+    subNodes = R.map((contentArray) => {
+      const newContentArray: any[] = [];
+      R.forEach((node: any, index: number) => {
+        newContentArray.push(node);
+        // Check if this is a hyperlink or other inline element and not the last element
+        if (node.nodeType === 'hyperlink' && index < contentArray.length - 1) {
+          // Check if the next element is not already an empty text node
+          const nextNode = contentArray[index + 1];
+          if (!(nextNode.nodeType === 'text' && nextNode.value === '')) {
+            // Don't add empty node, it will be preserved from HTML
+          }
+        }
+        // If this is the last element and it's a hyperlink, add empty text node
+        if (node.nodeType === 'hyperlink' && index === contentArray.length - 1) {
+          newContentArray.push({
+            nodeType: 'text',
+            value: '',
+            marks: [],
+            data: {},
+          });
+        }
+      }, contentArray);
+      return newContentArray;
+    }, subNodes);
   }
   const newData = R.map(
     (content) => ({
