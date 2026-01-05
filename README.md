@@ -17,7 +17,7 @@ needs to convert HTML to contentful's rich-text format, whether for the purpose 
 | Verified      | Verified           | Beta           |
 | ------------- |:------------------:|:--------------:|
 | `<ul>`        | `<embedded-asset>` | `<img>`        |
-| `<li>`        | `<inline-entry>`   |                |
+| `<li>`        | `<inline-entry>`   | `<asset-hyperlink>`|
 | `<ol>`        | `<embedded-entry>` |                |
 | `<b>`         | `<entry-hyperlink>`|                |
 | `<u>`         | `<td>`             |                |
@@ -169,7 +169,9 @@ if (field.type === 'RichText') {
             [INLINES.EMBEDDED_ENTRY]: (node) =>
                 `<inline-entry id="${node.data.target.sys.id}"/>`,
             [INLINES.ENTRY_HYPERLINK]: (node) =>
-                `<entry-hyperlink id="${node.data.target.sys.id}">${node.content[0].value}</entry-hyperlink>`
+                `<entry-hyperlink id="${node.data.target.sys.id}">${node.content[0].value}</entry-hyperlink>`,
+            [INLINES.ASSET_HYPERLINK]: (node) =>
+                `<asset-hyperlink id="${node.data.target.sys.id}">${node.content[0].value}</asset-hyperlink>`
         }
     };
 

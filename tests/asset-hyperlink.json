@@ -1,0 +1,32 @@
+{
+    "nodeType": "document",
+    "data": {},
+    "content": [
+        {
+            "nodeType": "paragraph",
+            "data": {},
+            "content": [
+                {
+                    "nodeType": "asset-hyperlink",
+                    "data": {
+                        "target": {
+                            "sys": {
+                                "id": "5bGk0Gibt5OwEYFOWjOzX3",
+                                "type": "Link",
+                                "linkType": "Asset"
+                            }
+                        }
+                    },
+                    "content": [
+                        {
+                            "nodeType": "text",
+                            "value": "asset-test",
+                            "marks": [],
+                            "data": {}
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

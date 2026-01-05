@@ -1,0 +1,50 @@
+{
+    "nodeType": "document",
+    "data": {},
+    "content": [
+        {
+            "nodeType": "paragraph",
+            "data": {},
+            "content": [
+                {
+                    "nodeType": "text",
+                    "value": "A",
+                    "marks": [],
+                    "data": {}
+                },
+                {
+                    "nodeType": "text",
+                    "value": "B",
+                    "marks": [
+                        {
+                            "type": "underline"
+                        }
+                    ],
+                    "data": {}
+                },
+                {
+                    "nodeType": "text",
+                    "value": " ",
+                    "marks": [],
+                    "data": {}
+                },
+                {
+                    "nodeType": "text",
+                    "value": "C",
+                    "marks": [
+                        {
+                            "type": "bold"
+                        }
+                    ],
+                    "data": {}
+                },
+                {
+                    "nodeType": "text",
+                    "value": "D",
+                    "marks": [],
+                    "data": {}
+                }
+            ]
+        }
+    ]
+}

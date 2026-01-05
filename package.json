@@ -1,6 +1,6 @@
 {
   "name": "html-to-richtext-contentful",
-  "version": "2.1.1",
+  "version": "2.2.1",
   "description": "Transform HTML into contentful's rich-text format",
   "homepage": "https://sodo-teo.vercel.app/",
   "main": "lib/index.js",
